@@ -24,7 +24,7 @@ type alias Model =
 
 
 type Msg
-    = WindowSize Window.Size
+    = WindowSizeMsg Window.Size
 
 
 init =
@@ -33,7 +33,7 @@ init =
       , kittensPerColumn = 4
       , kittensPerRow = 4
       }
-    , Task.perform WindowSize Window.size
+    , Task.perform WindowSizeMsg Window.size
     )
 
 
@@ -75,7 +75,7 @@ kittenPicture height width =
 
 update msg model =
     case msg of
-        WindowSize size ->
+        WindowSizeMsg size ->
             ( { model | windowWidth = size.width, windowHeight = size.height }
             , Cmd.none
             )
