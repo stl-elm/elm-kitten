@@ -80,7 +80,7 @@ update msg model =
 
 
 subscriptions model =
-    Sub.none
+    Window.resizes WindowSizeMsg
 
 
 
