@@ -37,8 +37,15 @@ init =
     )
 
 
+
+-- VIEWS
+
+
 view model =
-    kittenColumn model
+    div []
+        [ kittenColumn model
+        , userForm model
+        ]
 
 
 kittenColumn model =
@@ -73,12 +80,27 @@ kittenPicture height width =
         []
 
 
+userForm model =
+    div [ class "user-form" ]
+        [ label [ class "user-input" ] [ text "# columns ", input [ type_ "number" ] [] ]
+        , label [ class "user-input" ] [ text "# rows ", input [ type_ "number" ] [] ]
+        ]
+
+
+
+-- UPDATE
+
+
 update msg model =
     case msg of
         WindowSizeMsg size ->
             ( { model | windowWidth = size.width, windowHeight = size.height }
             , Cmd.none
             )
+
+
+
+-- SUBSCRIPTIONS
 
 
 subscriptions model =

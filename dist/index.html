@@ -1,6 +1,26 @@
 <!doctype html>
 <head>
-	<style>body{margin:0;padding:0;}</style>
+	<style>
+		body{margin:0;padding:0;}
+
+		.user-form {
+			position: fixed;
+			top:0;
+			display: flex;
+			flex-direction: column;
+			background:rgba(255,255,255,0.75);
+			padding:0.5em;
+		}
+		.user-input {
+			display: flex;
+			justify-content:flex-end;
+			align-items:center;
+		}
+		.user-input input[type=number] {
+			margin-left: 0.5em;
+		}
+
+	</style>
 </head>
 <body>
 	<script src="elm.js"></script>
