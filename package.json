@@ -1,0 +1,23 @@
+{
+  "name": "elm-kitten",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "elm-live src/Main.elm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stl-elm/elm-kitten.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stl-elm/elm-kitten/issues"
+  },
+  "homepage": "https://github.com/stl-elm/elm-kitten#readme",
+  "devDependencies": {
+    "elm": "^0.18.0",
+    "elm-live": "^2.7.5"
+  }
+}

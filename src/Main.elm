@@ -16,7 +16,11 @@ main =
 
 
 type alias Model =
-    { width : Int, height : Int }
+    { width : Int
+    , height : Int
+    , kittensPerColumn : Int
+    , kittensPerRow : Int
+    }
 
 
 type Msg
@@ -24,39 +28,49 @@ type Msg
 
 
 init =
-    ( { width = 0, height = 0 }
+    ( { width = 0
+      , height = 0
+      , kittensPerColumn = 4
+      , kittensPerRow = 4
+      }
     , Task.perform WindowSize Window.size
     )
 
 
-kittensPerColumn =
-    5
-
-
-kittensPerRow =
-    5
-
-
 view model =
+    kittenColumn model
+
+
+kittenColumn model =
     let
-        rows =
-            randomize model.height kittensPerColumn
+        heights =
+            -- TODO
+            [ 300 ]
     in
     div [ style [ ( "display", "flex" ), ( "flex-direction", "column" ) ] ]
-        (List.map (kittenRow model) rows)
+        (List.map (kittenRow model) heights)
 
 
 kittenRow model height =
     let
-        columns =
-            randomize model.width kittensPerRow
+        widths =
+            -- TODO
+            [ 300 ]
     in
     div [ style [ ( "display", "flex" ), ( "flex-direction", "row" ) ] ]
-        (List.map (kittenPicture height) columns)
+        (List.map (kittenPicture height) widths)
 
 
 kittenPicture height width =
-    img [ src ("http://placekitten.com/" ++ toString width ++ "/" ++ toString height) ] []
+    img
+        [ src
+            ("http://placekitten.com/"
+                ++ toString width
+                ++ "/"
+                ++ toString height
+            )
+        ]
+        []
 
 
 update msg model =
