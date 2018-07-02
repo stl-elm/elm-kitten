@@ -16,8 +16,8 @@ main =
 
 
 type alias Model =
-    { width : Int
-    , height : Int
+    { windowWidth : Int
+    , windowHeight : Int
     , kittensPerColumn : Int
     , kittensPerRow : Int
     }
@@ -28,8 +28,8 @@ type Msg
 
 
 init =
-    ( { width = 0
-      , height = 0
+    ( { windowWidth = 0
+      , windowHeight = 0
       , kittensPerColumn = 4
       , kittensPerRow = 4
       }
@@ -76,7 +76,7 @@ kittenPicture height width =
 update msg model =
     case msg of
         WindowSize size ->
-            ( { model | width = size.width, height = size.height }
+            ( { model | windowWidth = size.width, windowHeight = size.height }
             , Cmd.none
             )
 

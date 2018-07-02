@@ -9,3 +9,6 @@
 
 ## Goal III:
 - Randomize the cell size.
+
+## Stretch Goal:
+- Reshuffle the grid on mouse click.
