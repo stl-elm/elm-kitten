@@ -8,7 +8,8 @@
 - Dynamically update the cell size on window resize.
 
 ## Goal III:
-- Randomize the cell size.
+- Use user input to determine the grid size.
 
 ## Stretch Goal:
-- Reshuffle the grid on mouse click.
+- Randomize the cell size.
+
