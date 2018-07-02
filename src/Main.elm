@@ -44,8 +44,7 @@ view model =
 kittenColumn model =
     let
         heights =
-            -- TODO
-            [ 300 ]
+            randomize model.windowHeight model.kittensPerColumn
     in
     div [ style [ ( "display", "flex" ), ( "flex-direction", "column" ) ] ]
         (List.map (kittenRow model) heights)
@@ -54,8 +53,7 @@ kittenColumn model =
 kittenRow model height =
     let
         widths =
-            -- TODO
-            [ 300 ]
+            randomize model.windowWidth model.kittensPerRow
     in
     div [ style [ ( "display", "flex" ), ( "flex-direction", "row" ) ] ]
         (List.map (kittenPicture height) widths)
